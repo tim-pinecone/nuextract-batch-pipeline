@@ -1,0 +1,30 @@
+# Everything under pipeline/ is the build context. Exclude what shouldn't
+# ship in the image (or that would slow the transfer to the daemon).
+
+# Terraform state + plans (huge, secret, irrelevant)
+terraform/.terraform
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/tfplan
+terraform/*.tfvars
+
+# Editors / VCS
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+
+# Python noise
+__pycache__
+*.pyc
+*.pyo
+.venv
+.pytest_cache
+
+# Legacy manual submit driver — not part of the runtime image
+submit.py
+
+# The README stays out too — no reason to bake ~10KB of docs
+README.md

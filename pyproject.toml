@@ -1,0 +1,24 @@
+[project]
+name = "nuextract-batch-pipeline"
+version = "0.1.0"
+description = "S3-triggered OCR → chunk → embed pipeline on AWS Batch (NuExtract3 + Chonkie + EmbeddingGemma → Pinecone bulk-import parquet)"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+
+# Container deps live in the Dockerfile (torch/transformers pinned to specific
+# CUDA + qwen3_5 commits). This project block is only for LOCAL work — running
+# the aggregator script, prototyping in a notebook, hitting the S3/Batch/Pinecone
+# APIs from your laptop.
+dependencies = [
+    "boto3>=1.43.26",
+    "chonkie>=1.6.7",
+    "huggingface-hub>=1.16.4",
+    "pandas>=3.0.3",
+    "pinecone>=9.0",
+    "pyarrow>=24.0.0",
+    "pymupdf>=1.27.2.3",
+    "python-docx>=1.1.2",
+    "python-dotenv>=1.2.2",
+    "sentence-transformers>=3.3.0",
+]

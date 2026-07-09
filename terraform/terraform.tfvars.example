@@ -1,0 +1,28 @@
+# Copy to terraform.tfvars and edit. terraform.tfvars is gitignored.
+# Every var here has a sensible default in main.tf — anything you leave out
+# uses the default. Override only what you need.
+
+# ── Identity / region ────────────────────────────────────────────────────────
+aws_region  = "us-east-1"
+aws_profile = ""                       # e.g. "AdministratorAccess-084828598047"; "" = default chain
+environment = "dev"
+
+# ── Scale / cost knobs ───────────────────────────────────────────────────────
+# 5 instances × 4 vCPU = 20 vCPUs. Lower for cheaper, raise for faster.
+# max_vcpus       = 20
+# instance_types  = ["g4dn.xlarge", "g5.xlarge"]
+# job_retries     = 5
+
+# ── Pipeline behavior ────────────────────────────────────────────────────────
+# pdf_split_pages = 50            # PDFs over this many pages fan out into child jobs
+# chunk_size      = 2048          # Chonkie RecursiveChunker
+# embedding_model = "google/embeddinggemma-300m-qat-q8_0-unquantized"
+
+# ── HuggingFace token ────────────────────────────────────────────────────────
+# Strongly recommended once you have >1 instance running concurrently — 5
+# workers anonymously downloading 8.5GB will hit HF 429s. Pre-create the
+# secret, paste the ARN here:
+#   aws secretsmanager create-secret \
+#     --name vietnam-ocr-ner/hf-token \
+#     --secret-string "$HF_TOKEN"
+# hf_token_secret_arn = "arn:aws:secretsmanager:us-east-1:084828598047:secret:vietnam-ocr-ner/hf-token-XXXXXX"

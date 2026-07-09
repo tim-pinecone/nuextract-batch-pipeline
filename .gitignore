@@ -1,0 +1,53 @@
+# ── Secrets ──────────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.json
+secrets.yaml
+secrets.yml
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+*.whl
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ── uv / venv ────────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+.python-version
+
+# ── Terraform ────────────────────────────────────────────────────────────────
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.*
+terraform/terraform.tfvars
+terraform/tfplan
+terraform/*.tfplan
+
+# ── OS / editor ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Local data / scratch ─────────────────────────────────────────────────────
+data/
+scratch/
+*.log
+cost_report.md
