@@ -73,7 +73,7 @@ Any long-running work in this repo MUST be:
 
 ## History
 
-Extracted from `tim-pinecone/vietnam-wiki-national-archive` on 2026-07-08 —
+Extracted from an internal Vietnam War archive project on 2026-07-08 —
 the pipeline is generic (any of PDF / PNG / JPEG / TIFF / TXT / MD / DOCX),
 so it's factored out into its own repo. The parent repo used it to embed
 Vietnam War archive documents into Pinecone.

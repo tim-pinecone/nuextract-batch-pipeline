@@ -14,11 +14,11 @@
 #
 # Build for linux/amd64 — GPU instances are x86_64 (Apple-silicon wheels fail
 # silently at runtime):
-#   docker build --platform linux/amd64 -t vietnam-ocr-embed pipeline/
+#   docker build --platform linux/amd64 -t nuextract-batch-runner .
 
 FROM nvidia/cuda:12.4.1-cudnn-runtime-ubuntu22.04
 
-LABEL org.opencontainers.image.title="vietnam-ocr-embed" \
+LABEL org.opencontainers.image.title="nuextract-batch-runner" \
       org.opencontainers.image.description="NuExtract3 OCR + Chonkie + EmbeddingGemma worker"
 
 ENV DEBIAN_FRONTEND=noninteractive \

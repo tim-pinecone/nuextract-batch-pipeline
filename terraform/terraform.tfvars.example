@@ -4,7 +4,7 @@
 
 # ── Identity / region ────────────────────────────────────────────────────────
 aws_region  = "us-east-1"
-aws_profile = ""                       # e.g. "AdministratorAccess-084828598047"; "" = default chain
+aws_profile = ""                       # e.g. "AdministratorAccess-<account-id>"; "" = default chain
 environment = "dev"
 
 # ── Scale / cost knobs ───────────────────────────────────────────────────────
@@ -23,6 +23,6 @@ environment = "dev"
 # workers anonymously downloading 8.5GB will hit HF 429s. Pre-create the
 # secret, paste the ARN here:
 #   aws secretsmanager create-secret \
-#     --name vietnam-ocr-ner/hf-token \
+#     --name nuextract-batch/hf-token \
 #     --secret-string "$HF_TOKEN"
-# hf_token_secret_arn = "arn:aws:secretsmanager:us-east-1:084828598047:secret:vietnam-ocr-ner/hf-token-XXXXXX"
+# hf_token_secret_arn = "arn:aws:secretsmanager:us-east-1:<account-id>:secret:nuextract-batch/hf-token-XXXXXX"

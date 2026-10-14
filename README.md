@@ -200,5 +200,5 @@ local Terraform state. Idempotent — safe to re-run after partial failure.
 
 ## Attribution
 
-Extracted from [`tim-pinecone/vietnam-wiki-national-archive`](https://github.com/tim-pinecone/vietnam-wiki-national-archive)
+Extracted from an internal Vietnam War archive project
 on 2026-07-08 so the pipeline can serve other document sources.

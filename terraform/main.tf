@@ -168,7 +168,7 @@ variable "hf_token_secret_arn" {
   description = <<-EOT
     Optional Secrets Manager ARN holding the HF read token. Empty = anonymous
     HF access (will hit 429s on multi-instance cold starts). Pre-create with:
-      aws secretsmanager create-secret --name vietnam-ocr-ner/hf-token \
+      aws secretsmanager create-secret --name nuextract-batch/hf-token \
         --secret-string "$HF_TOKEN"
     and paste the returned ARN here.
   EOT
